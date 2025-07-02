@@ -11,3 +11,7 @@ A cloud-native platform simulating a global trade logistics system for MNCs. Bui
 - AWS (EC2, EKS, S3)
 - Terraform, GitHub Actions, Jenkins
 - Prometheus, Grafana, ELK Stack
+
+## Deployment
+- Deployed cargo tracking API to AWS EC2 using Docker.
+- Public URL: http://<public-ip>/cargo/cargo_001
