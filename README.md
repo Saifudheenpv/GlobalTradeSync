@@ -15,3 +15,7 @@ A cloud-native platform simulating a global trade logistics system for MNCs. Bui
 ## Deployment
 - Deployed cargo tracking API to AWS EC2 using Docker.
 - Public URL: http://<public-ip>/cargo/cargo_001
+
+## Infrastructure
+- Provisioned EC2 and S3 using Terraform.
+- API deployed to: http://<new-public-ip>/cargo/cargo_001
