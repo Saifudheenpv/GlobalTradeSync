@@ -11,7 +11,7 @@ def get_db_connection():
             dbname="globaltradesync",
             user="postgres",
             password="shanu9090",
-            host="globaltradesync-db",
+            host="globaltradesync-db-service",
             port="5432",
             cursor_factory=RealDictCursor
         )
@@ -32,7 +32,6 @@ async def get_analytics(cargo_id: str):
         if not result or "last_updated" not in result:
             raise HTTPException(status_code=404, detail=f"Cargo {cargo_id} not found")
         last_updated = result["last_updated"]
-        # Convert naive datetime to offset-aware (assume UTC)
         last_updated_aware = last_updated.replace(tzinfo=timezone.utc)
         delivery_time = (datetime.now(timezone.utc) - last_updated_aware).total_seconds() / 3600
         return {"cargo_id": cargo_id, "delivery_time_hours": round(delivery_time, 2)}
